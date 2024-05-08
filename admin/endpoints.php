@@ -7,7 +7,7 @@ class Ramadan_2024_Endpoints {
     }
 
     private function can_publish(){
-        return current_user_can( 'publish_' . PORCH_LANDING_POST_TYPE . 's' ) || current_user_can( 'manage_dt' );
+        return current_user_can( 'publish_landings' ) || current_user_can( 'manage_dt' );
     }
 
     public function add_api_routes() {
@@ -36,6 +36,10 @@ class Ramadan_2024_Endpoints {
         $params = $request->get_params();
 
         $default_content = $params['default_content'] ? 'en_US' : null;
+        $campaign_id = $params['campaign_id'] ?? null;
+        if ( empty( $campaign_id ) ){
+            return new WP_Error( __METHOD__, 'Missing campaign ID', [ 'status' => 400 ] );
+        }
 
         P4_Ramadan_2024_Content::install_content(
             $params['lang'] ?? 'en_US',
@@ -45,7 +49,8 @@ class Ramadan_2024_Endpoints {
                 'location' => $params['location'] ?? '[location]',
                 'ppl_group'   => $params['ppl_group'] ?? '[people group]',
             ],
-            $default_content
+            $default_content,
+            $campaign_id
         );
 
         return true;
@@ -53,9 +58,12 @@ class Ramadan_2024_Endpoints {
 
     public function dt_ramadan_delete_content( WP_REST_Request $request ){
         $params = $request->get_params();
-        $campaign = DT_Campaign_Settings::get_campaign();
+        $campaign_id = $params['campaign_id'] ?? null;
+        if ( empty( $campaign_id ) ){
+            return new WP_Error( __METHOD__, 'Missing campaign ID', [ 'status' => 400 ] );
+        }
 
-        if ( empty( $params['lang'] ) || !isset( $campaign['ID'] ) ){
+        if ( empty( $params['lang'] ) ){
             return new WP_Error( __METHOD__, 'Missing language code', [ 'status' => 400 ] );
         }
         global $wpdb;
@@ -66,26 +74,22 @@ class Ramadan_2024_Endpoints {
             WHERE t1m.meta_value = %s
             AND ( t1.post_status = 'publish' OR t1.post_status = 'future' )
             AND t1.post_type = 'landing'
-        ", $campaign['ID'], esc_sql( $params['lang'] ) ), ARRAY_A );
+        ", $campaign_id, esc_sql( $params['lang'] ) ), ARRAY_A );
 
         $post_ids = array_map( function( $post ){
-            return $post['ID'];
+            return esc_sql( $post['ID'] );
         }, $posts_query );
-        $post_ids = dt_array_to_sql( $post_ids );
+        $post_ids = implode( ',', $post_ids );
 
-
-        //phpcs:disable
         //$post_ids are escaped
-        $wpdb->query(  "
+        $wpdb->query(  $wpdb->prepare( "
             DELETE pm FROM $wpdb->postmeta pm
-            WHERE pm.post_id IN ( $post_ids )
-        ");
-        $wpdb->query(  "
+            WHERE pm.post_id IN ( %1s )
+        ", $post_ids ) );
+        $wpdb->query(  $wpdb->prepare( "
             DELETE p FROM $wpdb->posts p
-            WHERE p.ID IN ( $post_ids )
-        ");
-        //phpcs:enable
-
+            WHERE p.ID IN ( %1s )
+        ", $post_ids ) );
 
         return true;
     }

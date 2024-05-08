@@ -5,8 +5,8 @@ if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
 
 class P4_Ramadan_2024_Content {
 
-    public static function install_content( $language = 'en_US', $names = [], $from_translation = null ) {
-        $campaign = DT_Campaign_Settings::get_campaign();
+    public static function install_content( $language = 'en_US', $names = [], $from_translation = null, $campaign_id = null ) {
+        $campaign = DT_Campaign_Landing_Settings::get_campaign( $campaign_id );
         if ( empty( $campaign ) ) {
             dt_write_log( 'Campaign not set' );
             return false;
@@ -33,11 +33,11 @@ class P4_Ramadan_2024_Content {
 
                 'post_content'  => $post_content,
                 'post_excerpt'  => $day['excerpt'],
-                'post_type'  => PORCH_LANDING_POST_TYPE,
+                'post_type'  => 'landing',
                 'post_status'   => 'publish',
                 'post_author'   => get_current_user_id(),
                 'meta_input' => [
-                    PORCH_LANDING_META_KEY => $slug,
+                    'prayer_fuel_magic_key' => $slug,
                     'post_language' => $language,
                     'day' => $i + 1,
                     'fuel_tag' => 'ramadan_2024',
