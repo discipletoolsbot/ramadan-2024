@@ -153,7 +153,7 @@ class Ramadan_2024_Tab_General {
                 </tr>
             </tbody>
         </table>
-        <div id="ramadan-dialog" title="Install Prayer Fuel">
+        <div id="ramadan-dialog" title="Install Prayer Fuel" style="display: none">
             <form id="ramadan-install-form">
                 <h3>Install Ramadan Prayer Fuel in <span class="ramadan-new-language">French</span></h3>
 
@@ -217,7 +217,7 @@ class Ramadan_2024_Tab_General {
             jQuery(document).ready(function ($){
                 let code = null;
                 let default_content = false
-                $( "#ramadan-dialog" ).dialog({ autoOpen: false, minWidth: 600 });
+                $( "#ramadan-dialog" ).dialog({ autoOpen: false, minWidth: 600 }).show()
                 $( "#ramadan-delete-fuel" ).dialog({ autoOpen: false });
 
                 $('.install-ramadan-content').on('click', function (){
