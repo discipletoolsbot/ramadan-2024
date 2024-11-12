@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: P4M Prayer Campaigns\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ramadan-2024\n"
-"POT-Creation-Date: 2024-03-10T13:31:44+00:00\n"
+"POT-Creation-Date: 2024-08-14T10:03:57+00:00\n"
 "PO-Revision-Date: 2024-02-28 08:45+0000\n"
 "Last-Translator: Jelita Malau <jelitam64@gmail.com>\n"
 "Language-Team: Indonesian <https://translate.disciple.tools/projects/"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 5.4.2\n"
 
-#: admin/admin-menu-and-tabs.php:190
+#: admin/admin-menu-and-tabs.php:165
 msgid ""
 "Jesus, give the church [in location] grace to cherish your name above all "
 "else"
@@ -22,11 +22,11 @@ msgstr ""
 "Yesus, berikanlah gereja [di lokasi] rahmat untuk menghargai nama-Mu di atas "
 "segalanya"
 
-#: admin/admin-menu-and-tabs.php:200
+#: admin/admin-menu-and-tabs.php:175
 msgid "let the people [of location] grasp the Good News"
 msgstr "biarkan orang-orang [di lokasi] memahami Kabar Baik"
 
-#: admin/admin-menu-and-tabs.php:210
+#: admin/admin-menu-and-tabs.php:185
 msgid "Ask that God’s word would spread rapidly throughout [location]."
 msgstr "Mintalah agar firman Tuhan menyebar dengan cepat ke seluruh [lokasi]."
 

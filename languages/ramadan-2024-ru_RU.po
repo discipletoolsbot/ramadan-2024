@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: P4M Prayer Campaigns\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ramadan-2024\n"
-"POT-Creation-Date: 2024-03-10T13:31:44+00:00\n"
+"POT-Creation-Date: 2024-08-14T10:03:57+00:00\n"
 "PO-Revision-Date: 2023-03-16 09:13+0000\n"
 "Last-Translator: Dmitry <dmitry_cherednikov@wycliffe.ru>\n"
 "Language-Team: Russian <https://translate.disciple.tools/projects/"
@@ -15,7 +15,7 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.14.1\n"
 
-#: admin/admin-menu-and-tabs.php:190
+#: admin/admin-menu-and-tabs.php:165
 msgid ""
 "Jesus, give the church [in location] grace to cherish your name above all "
 "else"
@@ -23,11 +23,11 @@ msgstr ""
 "Иисус, дай церкви [in location] благодать, чтобы дорожить Твоим именем "
 "превыше всего"
 
-#: admin/admin-menu-and-tabs.php:200
+#: admin/admin-menu-and-tabs.php:175
 msgid "let the people [of location] grasp the Good News"
 msgstr "пусть люди [of location] поймут Благую Весть"
 
-#: admin/admin-menu-and-tabs.php:210
+#: admin/admin-menu-and-tabs.php:185
 msgid "Ask that God’s word would spread rapidly throughout [location]."
 msgstr ""
 

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disciple.Tools - Ramadan 2024 1.4.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ramadan-2024\n"
-"POT-Creation-Date: 2024-03-10T13:31:44+00:00\n"
+"POT-Creation-Date: 2024-08-14T10:03:57+00:00\n"
 "PO-Revision-Date: 2024-03-06 15:45+0000\n"
 "Last-Translator: Hannah Mae <hannah@visualstory.org>\n"
 "Language-Team: Turkmen <https://translate.disciple.tools/projects/"
@@ -17,18 +17,18 @@ msgstr ""
 "X-Generator: Weblate 5.4.2\n"
 "X-Domain: ramadan-2024\n"
 
-#: admin/admin-menu-and-tabs.php:190
+#: admin/admin-menu-and-tabs.php:165
 msgid ""
 "Jesus, give the church [in location] grace to cherish your name above all "
 "else"
 msgstr ""
 "Isa, adyňy hemme zatdan ileri tutmak üçin buthana (ýerinde) merhemet et"
 
-#: admin/admin-menu-and-tabs.php:200
+#: admin/admin-menu-and-tabs.php:175
 msgid "let the people [of location] grasp the Good News"
 msgstr "goý, adamlar [ýaşaýan ýeri] Hoş Habara düşünsinler"
 
-#: admin/admin-menu-and-tabs.php:210
+#: admin/admin-menu-and-tabs.php:185
 msgid "Ask that God’s word would spread rapidly throughout [location]."
 msgstr "Taňrynyň sözüniň [ýerleşýän ýeri] çalt ýaýramagyny soraň."
 
